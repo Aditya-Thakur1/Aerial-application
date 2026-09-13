@@ -57,9 +57,6 @@ class TurtleController(Node):
             msg = Twist()
 
             if abs(cmath.phase(dirn) - self.theta) <= 0.2:
-                #msg.angular.z = (cmath.phase(dirn) - self.theta)/self.timerTime
-                #msg.linear.x = abs(dirn)/self.timerTime
-                msg.angular.z = self.sign(cmath.phase(dirn) - self.theta)
                 msg.linear.x = 1.0
             else:
                 msg.angular.z = self.sign(cmath.phase(dirn) - self.theta)
